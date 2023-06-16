@@ -26,7 +26,7 @@ public class Cliente {
     private String email;
     private String password;
 
-    public Customer(Longid, String name, String email, String password) {
+    public Cliente (Long id, String name, String email, String password) {
         this.id =id;
         this.name =name;
         this.email =email;
@@ -42,7 +42,7 @@ public int hashCode() {
     }
 
 @Override
-public boolean equals(Objectobj) {
+public boolean equals(Objetobj) {
         if (this ==obj)
             return true;
         else if (obj== null)
