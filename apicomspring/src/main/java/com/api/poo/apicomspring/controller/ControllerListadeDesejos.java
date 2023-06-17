@@ -31,7 +31,7 @@ public class ControllerListadeDesejos {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<ListadeDesejos> create(@RequestBody @Valid ListadeDesejos newlistadeDesejos, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<ListadeDesejos> create(@RequestBody @Validated ListadeDesejos newlistadeDesejos, UriComponentsBuilder uriBuilder) {
         ListadeDesejos listadeDesejos = serviceListadeDesejos.create(newlistadeDesejos);
         URI uri = uriBuilder.path("/listadeDesejos/{id}").buildAndExpand(newlistadeDesejos.getId()).toUri();
         return ResponseEntity.created(uri).body(listadeDesejos);
@@ -45,7 +45,7 @@ public class ControllerListadeDesejos {
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<ListadeDesejos> addProduct(@PathVariable Long id, @RequestBody @Valid Set<Produto> newProducts) throws ResourceNotFoundException {
+    public ResponseEntity<ListadeDesejos> addProduct(@PathVariable Long id, @RequestBody @Validated Set<Produto> newProducts) throws ResourceNotFoundException {
         ListadeDesejos listadeDesejos = serviceListadeDesejos.addProduct(newProducts, id);
         return ResponseEntity.ok(listadeDesejos);
     }
