@@ -10,8 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -41,14 +40,14 @@ public class Cliente {
     }
 
   
-    public boolean equals(Objetobj) {
+    public boolean equals(Object obj) {
         if (this ==obj)
             return true;
         else if (obj== null)
             return false;
         else if (getClass() !=obj.getClass())
             return false;
-        Customer other = (Customer)obj;
+        Cliente other = (Cliente)obj;
         if (id == null)
             return other.id == null;
         else return id.equals(other.id);

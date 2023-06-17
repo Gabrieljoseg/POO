@@ -1,3 +1,5 @@
+package com.api.poo.apicomspring.model;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
